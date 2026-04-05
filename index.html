@@ -16,48 +16,287 @@
       --border: rgba(255,255,255,0.12);
       --shadow: 0 20px 40px rgba(0,0,0,0.25);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-    body { background: linear-gradient(135deg, var(--bg), #111827); color: var(--text); line-height: 1.6; }
-    header { position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(15, 23, 42, 0.75); border-bottom: 1px solid var(--border); z-index: 10; }
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
-    .logo { font-size: 1.4rem; font-weight: bold; color: white; }
-    .logo span { color: var(--primary); }
-    nav ul { display: flex; gap: 18px; list-style: none; }
-    nav a { color: var(--text); text-decoration: none; transition: 0.25s; }
-    nav a:hover { color: var(--primary); }
-    .hero { min-height: 88vh; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 40px; padding: 50px 0; }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
-    .hero p { font-size: 1.1rem; color: var(--muted); margin-bottom: 28px; max-width: 580px; }
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 14px 22px; border-radius: 14px; text-decoration: none; font-weight: bold; transition: 0.25s ease; border: 1px solid transparent; }
-    .btn-primary { background: var(--primary); color: #082f49; }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
-    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-    .hero-card,.card,.about-box,.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); }
-    .hero-card { border-radius: 24px; padding: 28px; }
-    .hero-card h3,.card h3 { margin-bottom: 12px; color: white; }
-    .hero-card ul { list-style: none; display: grid; gap: 14px; }
-    .hero-card li { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 14px; border-radius: 14px; color: var(--muted); }
-    section { padding: 80px 0; }
-    .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: 2rem; margin-bottom: 10px; }
-    .section-title p,.card p,.about-box p { color: var(--muted); }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-    .card:hover { transform: translateY(-6px); border-color: rgba(56, 189, 248, 0.4); }
-    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
-    .contact-form { max-width: 700px; margin: 0 auto; padding: 28px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-    .form-group input,.form-group textarea { width: 100%; padding: 14px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,0.04); color: white; outline: none; }
-    .form-group textarea { min-height: 130px; resize: vertical; }
-    .message { margin-top: 14px; color: var(--primary); font-weight: bold; }
-    footer { border-top: 1px solid var(--border); padding: 24px 0; text-align: center; color: var(--muted); }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--bg), #111827);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.75);
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 50px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 580px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #082f49;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 14px;
+      color: white;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-card li {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 14px;
+      border-radius: 14px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: white;
+      outline: none;
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .message {
+      margin-top: 14px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      text-align: center;
+      color: var(--muted);
+    }
+
     @media (max-width: 900px) {
-      .hero,.about,.cards { grid-template-columns: 1fr; }
-      .nav { flex-direction: column; gap: 14px; }
-      nav ul { flex-wrap: wrap; justify-content: center; }
+      .hero,
+      .about,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -68,69 +307,124 @@
       <nav>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Características</a></li>
+          <li><a href="#nosotros">Sobre la App</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <main>
     <section id="inicio" class="container hero">
       <div>
-        <h1>Una página web moderna, rápida y lista para usar</h1>
-        <p>Este diseño te sirve como base para un negocio, portafolio, tienda, sistema o proyecto personal. Está hecho en un solo archivo HTML con CSS y JavaScript.</p>
+        <h1>ALCON RAMOS VPN - Navega seguro y sin límites</h1>
+        <p>
+          ALCON RAMOS VPN es una aplicación disponible en Play Store que te permite navegar de forma segura, privada y sin restricciones. Disfruta de una conexión rápida y confiable desde cualquier lugar.
+        </p>
         <div class="buttons">
-          <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-          <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+          <a href="#contacto" class="btn btn-primary">Descargar App</a>
+          <a href="#servicios" class="btn btn-secondary">Ver características</a>
         </div>
       </div>
+
       <div class="hero-card">
         <h3>Incluye:</h3>
         <ul>
-          <li>Diseño adaptable para celular y PC</li>
-          <li>Secciones de inicio, servicios, nosotros y contacto</li>
-          <li>Formulario con mensaje interactivo</li>
-          <li>Estilo moderno listo para personalizar</li>
+          <li>Conexión rápida y estable</li>
+          <li>Acceso a contenido sin restricciones</li>
+          <li>Protección de privacidad en línea</li>
+          <li>Fácil de usar en Android</li>
         </ul>
       </div>
     </section>
+
     <section id="servicios">
       <div class="container">
-        <div class="section-title"><h2>Servicios</h2><p>Personaliza esta sección para mostrar lo que ofreces a tus clientes.</p></div>
+        <div class="section-title">
+          <h2>Características</h2>
+          <p>Personaliza esta sección para mostrar lo que ofreces a tus clientes.</p>
+        </div>
         <div class="cards">
-          <div class="card"><h3>Diseño Web</h3><p>Creación de páginas atractivas, funcionales y optimizadas para todo tipo de dispositivos.</p></div>
-          <div class="card"><h3>Sistemas</h3><p>Desarrollo de herramientas internas, paneles administrativos y soluciones empresariales.</p></div>
-          <div class="card"><h3>Soporte</h3><p>Mantenimiento, mejoras y acompañamiento técnico para que tu proyecto siga creciendo.</p></div>
+          <div class="card">
+            <h3>Velocidad</h3>
+            <p>Disfruta de servidores optimizados para una conexión rápida y sin interrupciones.</p>
+          </div>
+          <div class="card">
+            <h3>Seguridad</h3>
+            <p>Protege tu información y navega de forma anónima con cifrado seguro.</p>
+          </div>
+          <div class="card">
+            <h3>Acceso global</h3>
+            <p>Conéctate a contenido restringido desde cualquier país sin limitaciones.</p>
+          </div>
         </div>
       </div>
     </section>
+
     <section id="nosotros">
       <div class="container">
-        <div class="section-title"><h2>Nosotros</h2><p>Una breve presentación de tu empresa, marca o proyecto.</p></div>
+        <div class="section-title">
+          <h2>Sobre la App</h2>
+          <p>Una breve presentación de tu empresa, marca o proyecto.</p>
+        </div>
         <div class="about">
-          <div class="about-box"><p>Somos un equipo enfocado en crear experiencias digitales claras, modernas y efectivas. Nuestro objetivo es ayudarte a destacar en internet.</p><p>Puedes reemplazar este texto por la historia de tu negocio, misión, visión o propuesta de valor.</p></div>
-          <div class="about-box"><h3>¿Por qué elegirnos?</h3><p>✔ Atención personalizada</p><p>✔ Diseño profesional</p><p>✔ Desarrollo escalable</p><p>✔ Entrega rápida</p></div>
+          <div class="about-box">
+            <p>
+              ALCON RAMOS VPN es una solución diseñada para usuarios que buscan libertad, velocidad y seguridad en su conexión a internet.
+            </p>
+            <p>
+              Nuestra app está optimizada para ofrecer el mejor rendimiento con una interfaz simple y fácil de usar.
+            </p>
+          </div>
+          <div class="about-box">
+            <h3>¿Por qué usar ALCON RAMOS VPN?</h3>
+            <p>✔ Conexión rápida</p>
+            <p>✔ Seguridad avanzada</p>
+            <p>✔ Sin restricciones</p>
+            <p>✔ Fácil de usar</p>
+          </div>
         </div>
       </div>
     </section>
+
     <section id="contacto">
       <div class="container">
-        <div class="section-title"><h2>Contacto</h2><p>Envía un mensaje usando este formulario de ejemplo.</p></div>
+        <div class="section-title">
+          <h2>Contacto</h2>
+          <p>Próximamente disponible en Google Play Store.</p>
+        </div>
+
         <form class="contact-form" id="contactForm">
-          <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required /></div>
-          <div class="form-group"><label for="email">Correo</label><input type="email" id="email" name="email" placeholder="tunombre@correo.com" required /></div>
-          <div class="form-group"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea></div>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tunombre@correo.com" required />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+          </div>
           <button type="submit" class="btn btn-primary">Enviar mensaje</button>
           <div class="message" id="formMessage"></div>
         </form>
       </div>
     </section>
   </main>
-  <footer><div class="container"><p>© 2026 MiSitio. Todos los derechos reservados.</p></div></footer>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 ALCON RAMOS VPN. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
   <script>
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       const nombre = document.getElementById('nombre').value.trim();
